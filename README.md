@@ -5,6 +5,6 @@
 
 1. Eager 방식
 2. Lazy 방식 
-- thread safe (Synchronized)
+- thread safe (synchronized)
 - DCL
 3. Holder 방식
