@@ -8,3 +8,7 @@
 - thread safe (synchronized)
 - DCL
 3. Holder 방식
+
+
+
+hotire blog : https://blog.naver.com/gngh0101
