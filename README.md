@@ -9,6 +9,9 @@
 - DCL
 3. Holder 방식
 
+## Proxy pattern (프록시 패턴)
+'대리인' 이라는 의미로 프록시가 대리하여 업무를 처리하고 그 안에서 보조업무 처리를 하는 것이다. </br>
+Spring AOP를 구현하는 방식이다. </br>
 
 
 hotire blog : https://blog.naver.com/gngh0101
