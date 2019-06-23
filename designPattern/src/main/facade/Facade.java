@@ -1,5 +1,7 @@
 package facade;
 
+import java.util.Map;
+
 /**
  * https://jusungpark.tistory.com/23
  */
@@ -13,8 +15,8 @@ public class Facade {
     this.subSystem02 = subSystem02;
   }
 
-  public void process() {
-    subSystem01.process();
-    subSystem02.process();
+  public Map<String, String> process() {
+    return Map.of("subSystem01", subSystem01.process(),
+      "subSystem02", subSystem02.process());
   }
 }

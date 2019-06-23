@@ -13,9 +13,14 @@ HELP.md
 
 ### IntelliJ IDEA ###
 .idea
+.idea/
 *.iws
 *.iml
 *.ipr
+*.compiler.xml
+*.misc.xml
+*.modules.xml
+
 
 ### NetBeans ###
 /nbproject/private/

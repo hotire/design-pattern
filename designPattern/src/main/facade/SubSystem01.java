@@ -2,7 +2,8 @@ package facade;
 
 public class SubSystem01 {
 
-  public void process() {
+  public String process() {
     System.out.println("SubSystem01");
+    return "SubSystem01";
   }
 }
