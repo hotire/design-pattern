@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70ac52a2-8338-4f63-80c7-39e204b56fbc" name="Default Changelist" comment="" />
+    <list default="true" id="70ac52a2-8338-4f63-80c7-39e204b56fbc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/prototype/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/prototype/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/proxy/DynamicInvocationHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/proxy/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/proxy/Sortable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/proxy/SortingUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/singleton/DoubleCheckedLocking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/singleton/Eager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/singleton/Lazy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/singleton/SingletonHolder$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/singleton/SingletonHolder$Holder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/singleton/SingletonHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/designPattern/singleton/SynchronizedLazy.class" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +41,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Git file" value="1" />
           <entry key="JAVA" value="10" />
         </counts>
       </usages-collector>
@@ -47,11 +63,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/designPattern/src/facade/Facade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+            <state relative-caret-position="216">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/designPattern/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -128,6 +153,7 @@
         <option value="$PROJECT_DIR$/designPattern/src/facade/SubSystem01.java" />
         <option value="$PROJECT_DIR$/designPattern/src/facade/SubSystem02.java" />
         <option value="$PROJECT_DIR$/designPattern/src/facade/Facade.java" />
+        <option value="$PROJECT_DIR$/designPattern/.gitignore" />
       </list>
     </option>
   </component>
@@ -161,12 +187,6 @@
               <item name="designPattern" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="design-pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="designPattern" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="facade" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -177,7 +197,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561296887702" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561297025492" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -248,12 +268,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1561296019574</updated>
-      <workItem from="1561296022301" duration="863000" />
+      <workItem from="1561296022301" duration="1107000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="863000" />
+    <option name="totallyTimeSpent" value="1107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1628" height="948" extended-state="0" />
@@ -268,7 +288,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="FindBugs-IDEA" />
       <window_info anchor="bottom" id="Count words" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.3297619" />
       <window_info anchor="bottom" id="CheckStyle" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" />
@@ -278,7 +298,7 @@
       <window_info anchor="bottom" id="Debug with VisualVM" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3297619" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3297619" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -375,8 +395,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/designPattern/src/facade/Facade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        <state relative-caret-position="216">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/designPattern/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
         </state>
       </provider>
     </entry>
