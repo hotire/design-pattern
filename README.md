@@ -14,4 +14,11 @@
 Spring AOP를 구현하는 방식이다. </br>
 
 
+## Facade pattern (퍼사드 패턴)
+
+서브시스템의 일련의 인터페이스에 대한 통합된 인터페이스를 제공한다.
+
+복잡한 서브시스템의 인터페이스를 단순화한다.
+
+
 hotire blog : https://blog.naver.com/gngh0101
