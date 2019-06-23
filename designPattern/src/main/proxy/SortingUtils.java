@@ -3,6 +3,8 @@ package proxy;
 import java.lang.reflect.Proxy;
 import java.util.Random;
 import java.util.Stack;
+import proxy.DynamicInvocationHandler;
+import proxy.Sortable;
 
 /**
  * 
