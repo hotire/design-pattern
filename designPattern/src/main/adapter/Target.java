@@ -1,6 +1,6 @@
 package adapter;
 
-public class Adaptee {
+public class Target {
   public void print(){
     System.out.println("adaptee");
   }

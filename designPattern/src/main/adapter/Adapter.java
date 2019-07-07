@@ -4,11 +4,11 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class Adapter implements PrintAble{
-  private final Adaptee adaptee;
+  private final Target target;
 
   @Override
   public PrintAble print() {
-    adaptee.print();
+    target.print();
     return this;
   }
 }
