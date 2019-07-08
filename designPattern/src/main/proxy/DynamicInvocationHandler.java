@@ -6,9 +6,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.UndeclaredThrowableException;
 
 /**
- * 
- * @author : hoTire
- * @comment : Proxy 
+ * https://hamait.tistory.com/868
  */
 public class DynamicInvocationHandler implements InvocationHandler {
 	private Object delegate;
