@@ -1,11 +1,22 @@
 package composite;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Leaf
  */
-@Data
-public class File<T> extends Component{
-  T data;
+public class File<T> extends Component {
+  @Getter
+  @Setter
+  private T data;
+
+  public File(String name) {
+    super(name);
+  }
+
+  public File(String name, T data) {
+    super(name);
+    this.data = data;
+  }
 }

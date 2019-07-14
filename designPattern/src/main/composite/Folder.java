@@ -1,24 +1,33 @@
 package composite;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import lombok.Getter;
 
 /**
  * Composite
  */
 public class Folder extends Component {
 
-  private List<Component> components;
+  @Getter
+  private Set<Component> children;
 
-  public Folder(List<Component> components) {
-    this.components = components;
+  public Folder(String name, Set<Component> children) {
+    super(name);
+    this.children = children;
+  }
+
+  public Folder(String name) {
+    super(name);
+    this.children = new HashSet<>();
   }
 
   public Folder add(Component component) {
-    this.components.add(component);
+    children.add(component);
     return this;
   }
   public Folder remove(Component component) {
-    this.components.remove(component);
+    children.remove(component);
     return this;
   }
 }
