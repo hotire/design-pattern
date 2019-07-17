@@ -20,5 +20,21 @@ Spring AOP를 구현하는 방식이다. </br>
 
 복잡한 서브시스템의 인터페이스를 단순화한다.
 
+## Adapter pattern (어답터 패턴)
+
+## Decorator pattern (데코레이터 패턴)
+
+## Bridge pattern (브릿지 패턴)
+
+## Composite pattern (컴포지트 패턴)
+
+## Visitor pattern (방문자 패턴)
+
+
+
+
+
+
+
 
 hotire blog : https://blog.naver.com/gngh0101
