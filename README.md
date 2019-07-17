@@ -22,6 +22,8 @@ Spring AOP를 구현하는 방식이다. </br>
 
 ## Adapter pattern (어답터 패턴)
 
+한 클래스의 인터페이스를 클라이언트에서 사용하고자 하는 다른 인터페이스로 변환한다.
+
 ## Decorator pattern (데코레이터 패턴)
 
 ## Bridge pattern (브릿지 패턴)
