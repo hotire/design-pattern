@@ -2,20 +2,20 @@ package memento;
 
 import lombok.Getter;
 
-public class Originator {
+public class Originator<T> {
 
   @Getter
-  private String state;
+  private T state;
 
-  public Memento createMemento() {
-    return new Memento(state);
+  public Memento<T> createMemento() {
+    return new Memento<>(state);
   }
 
-  public void resotreMement(Memento memento) {
+  public void resotreMemento(Memento<T> memento) {
     this.state = memento.getState();
   }
 
-  public Originator setState(String state) {
+  public Originator<T> setState(T state) {
     this.state = state;
     return this;
   }

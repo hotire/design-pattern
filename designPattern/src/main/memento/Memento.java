@@ -1,12 +1,13 @@
 package memento;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.AccessLevel;
+import lombok.Getter;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Memento {
-    private String state;
+public class Memento<T> {
+    @Getter(AccessLevel.PROTECTED)
+    private T state;
+
+    protected Memento(T state) {
+      this.state = state;
+    }
 }
