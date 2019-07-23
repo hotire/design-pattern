@@ -1,7 +1,12 @@
 package state;
 
+import lombok.Getter;
+
 public class Light implements LightState {
   protected LightState lightState;
+
+  @Getter
+  private int count = 0;
 
   public Light() {
     lightState = offState;
@@ -10,7 +15,7 @@ public class Light implements LightState {
   private LightState offState = new LightState() {
     @Override
     public LightState on() {
-      System.out.println("on");
+      count++;
       lightState = onState;
       return this;
     }
@@ -31,7 +36,7 @@ public class Light implements LightState {
 
     @Override
     public LightState off() {
-      System.out.println("off");
+      count++;
       lightState = offState;
       return this;
     }
