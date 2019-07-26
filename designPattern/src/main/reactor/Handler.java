@@ -10,7 +10,6 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 public final class Handler implements Runnable {
   protected final SocketChannel socket;
@@ -30,34 +29,26 @@ public final class Handler implements Runnable {
     sel.wakeup();
 
     handlerMap = new HashMap<>();
-    handlerMap.put(READING, () -> {
-      try {
-        read();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    });
-
-    handlerMap.put(SENDING, () -> {
-      try {
-        send();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    });
+    handlerMap.put(READING, this::read);
+    handlerMap.put(SENDING, this::send);
   }
 
   void process() { /* ... */ }
 
   // class Handler continued
   public void run() {
-    Optional.ofNullable(handlerMap.get(state))
-      .orElseThrow()
-      .run();
+    handlerMap.get(state).run();
   }
 
-  void read() throws IOException {
-    int readCount = socket.read(input);
+  void read() {
+    int readCount = 0;
+
+    try {
+      readCount = socket.read(input);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+
     if (readCount > 0) {
       process();
     }
@@ -67,7 +58,11 @@ public final class Handler implements Runnable {
     sk.interestOps(SelectionKey.OP_WRITE);
   }
 
-  void send() throws IOException {
-    socket.write(output);
+  void send() {
+    try {
+      socket.write(output);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 }
