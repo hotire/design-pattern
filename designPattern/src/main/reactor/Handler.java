@@ -11,12 +11,18 @@ import java.nio.channels.SocketChannel;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class Handler implements Runnable {
+public class Handler implements Runnable {
+
   protected final SocketChannel socket;
+
   protected final SelectionKey sk;
+
   protected ByteBuffer input = ByteBuffer.allocate(1024);
+
   protected ByteBuffer output = ByteBuffer.allocate(1024);
+
   protected HandlerState state = READING;
+
   protected Map<HandlerState, Runnable> handlerMap;
 
   Handler(Selector sel, SocketChannel c) throws IOException {
