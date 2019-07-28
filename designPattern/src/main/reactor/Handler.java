@@ -39,7 +39,7 @@ public class Handler implements Runnable {
     handlerMap.put(SENDING, this::send);
   }
 
-  void process() { /* ... */ }
+  void process(int readCount) {}
 
   // class Handler continued
   public void run() {
@@ -52,11 +52,12 @@ public class Handler implements Runnable {
     try {
       readCount = socket.read(input);
     } catch (IOException e) {
-      throw new RuntimeException(e);
+//      throw new RuntimeException(e);
+//      System.out.println("Connection closed," );
     }
 
     if (readCount > 0) {
-      process();
+      process(readCount);
     }
 
     state = SENDING;
@@ -67,6 +68,8 @@ public class Handler implements Runnable {
   void send() {
     try {
       socket.write(output);
+      sk.interestOps(SelectionKey.OP_READ);
+      state = READING;
     } catch (IOException e) {
       throw new RuntimeException(e);
     }

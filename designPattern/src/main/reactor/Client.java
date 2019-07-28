@@ -26,8 +26,7 @@ public class Client {
     ) {
 
       System.out.println("Client connected to host : " + hostIp + " port: " + hostPort);
-      System.out.println("Type (\"exit\" to quit)");
-      System.out.println("Tell what your name is to the Server.....");
+      System.out.println("Say to the Server.....(\"exit\" to quit)");
 
       String userInput;
 
@@ -51,8 +50,4 @@ public class Client {
     }
   }
 
-  public static void main(String[] args) throws IOException {
-    Client client = new Client("127.0.0.1", 9900);
-    client.run();
-  }
 }

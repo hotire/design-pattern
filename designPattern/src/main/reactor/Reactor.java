@@ -14,8 +14,8 @@ import java.util.Set;
  */
 
 public class Reactor implements Runnable {
-  final Selector selector;
-  final ServerSocketChannel serverSocket;
+  private final Selector selector;
+  private final ServerSocketChannel serverSocket;
 
   public Reactor(int port) throws IOException {
     selector = Selector.open();
@@ -35,6 +35,7 @@ public class Reactor implements Runnable {
   serverSocket = p.openServerSocketChannel();
   */
   public void run() { // normally in a new Thread
+    System.out.println("Server listening to port: " + serverSocket.socket().getLocalPort());
     try {
       while (!Thread.interrupted()) {
         selector.select();
@@ -44,14 +45,16 @@ public class Reactor implements Runnable {
           dispatch((SelectionKey) it.next());
         selected.clear();
       }
-    } catch (IOException ex) { /* ... */ }
+    } catch (IOException ex) {
+      System.exit(1);
+    }
   }
 
   void dispatch(SelectionKey k) {
     Runnable r = (Runnable) (k.attachment());
-    if (r != null)
-
+    if (r != null) {
       r.run();
+    }
   }
 
   class Acceptor implements Runnable { // inner
@@ -60,7 +63,7 @@ public class Reactor implements Runnable {
       try {
         SocketChannel c = serverSocket.accept();
         if (c != null)
-          new Handler(selector, c);
+          new ReadHandler(selector, c);
       } catch (IOException ex) { /* ... */ }
     }
   }
