@@ -11,7 +11,7 @@ import java.nio.channels.SocketChannel;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Handler implements Runnable {
+public class DefaultHandler implements Runnable {
 
   protected final SocketChannel socket;
 
@@ -25,7 +25,7 @@ public class Handler implements Runnable {
 
   protected Map<HandlerState, Runnable> handlerMap;
 
-  Handler(Selector sel, SocketChannel c) throws IOException {
+  DefaultHandler(Selector sel, SocketChannel c) throws IOException {
     this.socket = c;
     c.configureBlocking(false);
     // Optionally try first read now
@@ -39,21 +39,17 @@ public class Handler implements Runnable {
     handlerMap.put(SENDING, this::send);
   }
 
-  void process(int readCount) {}
-
-  // class Handler continued
   public void run() {
     handlerMap.get(state).run();
   }
 
-  void read() {
+  public void read() {
     int readCount = 0;
 
     try {
       readCount = socket.read(input);
-    } catch (IOException e) {
-//      throw new RuntimeException(e);
-//      System.out.println("Connection closed," );
+    } catch (IOException ignore) {
+      // ignore
     }
 
     if (readCount > 0) {
@@ -61,11 +57,10 @@ public class Handler implements Runnable {
     }
 
     state = SENDING;
-    // Normally also do first write now
     sk.interestOps(SelectionKey.OP_WRITE);
   }
-
-  void send() {
+  
+  public void send() {
     try {
       socket.write(output);
       sk.interestOps(SelectionKey.OP_READ);
@@ -74,4 +69,7 @@ public class Handler implements Runnable {
       throw new RuntimeException(e);
     }
   }
+
+  protected void process(int readCount) {}
+
 }
