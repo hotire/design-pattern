@@ -1,5 +1,7 @@
 package singleton;
 
+import java.util.Optional;
+
 /**
  * 
  * @author : hoTire
@@ -7,15 +9,15 @@ package singleton;
  */
 public class SynchronizedLazy {
 	private static volatile SynchronizedLazy instance;
-	private SynchronizedLazy(){};
-	public static synchronized  SynchronizedLazy getInstacne() {
-		if (instance == null) instance = new SynchronizedLazy(); 
-		return instance;
+	private SynchronizedLazy(){}
+	public static synchronized  SynchronizedLazy getInstance() {
+		return Optional.ofNullable(instance)
+			.orElseGet(() -> instance = new SynchronizedLazy());
 	}
-	public static SynchronizedLazy getInstacne2() {
+	public static SynchronizedLazy getInstanceByBlock() {
 		synchronized (SynchronizedLazy.class) {
-			if (instance == null) instance = new SynchronizedLazy(); 
+			return Optional.ofNullable(instance)
+				.orElseGet(() -> instance = new SynchronizedLazy());
 		}
-		return instance; 
 	}
 }

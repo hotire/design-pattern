@@ -1,5 +1,7 @@
 package singleton;
 
+import java.util.Optional;
+
 /**
  * 
  * @author : hoTire
@@ -7,9 +9,9 @@ package singleton;
  */
 public class Lazy {
 	private static Lazy instance;
-	private Lazy() {};
+	private Lazy() {}
 	public static Lazy getInstance() {
-		if (instance == null) instance = new Lazy();
-		return instance;
+		return Optional.ofNullable(instance)
+			.orElseGet(() -> instance = new Lazy());
 	}
 }

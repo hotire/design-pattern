@@ -6,7 +6,7 @@ package singleton;
  * @comment : Holder
  */
 public class SingletonHolder {
-	private SingletonHolder(){};
+	private SingletonHolder(){}
 	private static class Holder {
 		private final static SingletonHolder instance = new SingletonHolder();
 	}

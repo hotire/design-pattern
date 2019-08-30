@@ -1,4 +1,7 @@
 package singleton;
+
+import java.util.Optional;
+
 /**
  * 
  * @author : hoTire
@@ -8,11 +11,12 @@ public class DoubleCheckedLocking {
 	private static volatile DoubleCheckedLocking instance;
 	private DoubleCheckedLocking(){};
 	public static DoubleCheckedLocking getInstance() {
-		if (instance == null) {
-			synchronized (DoubleCheckedLocking.class) {
-				if (instance == null) instance = new DoubleCheckedLocking();
-			}
-		}
-		return instance;
+		return Optional.ofNullable(instance)
+			.orElseGet(() -> {
+				synchronized(DoubleCheckedLocking.class) {
+					return Optional.ofNullable(instance)
+						.orElseGet(() -> instance = new DoubleCheckedLocking());
+				}
+			});
 	}
 }
