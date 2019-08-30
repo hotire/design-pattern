@@ -8,7 +8,7 @@ package singleton;
 public class SingletonHolder {
 	private SingletonHolder(){}
 	private static class Holder {
-		private final static SingletonHolder instance = new SingletonHolder();
+		private static final SingletonHolder instance = new SingletonHolder();
 	}
 	public static SingletonHolder getInstance() {
 		return Holder.instance;
