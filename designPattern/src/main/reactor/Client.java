@@ -10,13 +10,13 @@ import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class Client {
+public class Client implements Runnable {
 
   private final String hostIp;
 
   private final int hostPort;
 
-  public void run() throws IOException {
+  public void run() {
 
     try (
       Socket clientSocket = new Socket(hostIp, hostPort);
@@ -26,7 +26,7 @@ public class Client {
     ) {
 
       System.out.println("Client connected to host : " + hostIp + " port: " + hostPort);
-      System.out.println("Say to the Server.....(\"exit\" to quit)");
+      System.out.println("Input message .....(\"exit\" to quit)");
 
       String userInput;
 

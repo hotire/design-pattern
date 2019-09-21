@@ -14,7 +14,7 @@ public class ReadHandler extends Handler {
   }
 
   @Override
-  void process(int readCount) {
+  protected void process(int readCount) {
     sb.setLength(0);
 
     input.flip();

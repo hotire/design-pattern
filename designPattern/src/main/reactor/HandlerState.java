@@ -1,5 +1,5 @@
 package reactor;
 
 public enum HandlerState {
-  READING, SENDING
+  READING, SENDING, PROCESSING
 }

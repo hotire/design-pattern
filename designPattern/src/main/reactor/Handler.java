@@ -11,7 +11,7 @@ import java.nio.channels.SocketChannel;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DefaultHandler implements Runnable {
+public class Handler implements Runnable {
 
   protected final SocketChannel socket;
 
@@ -25,7 +25,7 @@ public class DefaultHandler implements Runnable {
 
   protected Map<HandlerState, Runnable> handlerMap;
 
-  DefaultHandler(Selector sel, SocketChannel c) throws IOException {
+  Handler(Selector sel, SocketChannel c) throws IOException {
     this.socket = c;
     c.configureBlocking(false);
     // Optionally try first read now
@@ -59,7 +59,7 @@ public class DefaultHandler implements Runnable {
     state = SENDING;
     sk.interestOps(SelectionKey.OP_WRITE);
   }
-  
+
   public void send() {
     try {
       socket.write(output);
