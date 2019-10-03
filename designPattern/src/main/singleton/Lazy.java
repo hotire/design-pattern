@@ -14,4 +14,7 @@ public class Lazy {
 		return Optional.ofNullable(instance)
 			.orElseGet(() -> instance = new Lazy());
 	}
+	private Object readResolve() {
+		return getInstance();
+	}
 }

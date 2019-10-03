@@ -13,9 +13,7 @@ public class Eager implements Serializable {
 	public static Eager getInstance() {
 		return instance;
 	}
-
 	private Object readResolve() {
 		return getInstance();
 	}
-
 }
